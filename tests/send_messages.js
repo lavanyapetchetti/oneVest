@@ -56,6 +56,7 @@ describe('Send SMS through android messages app', function () {
     // Test case to send the entered message
     it('Send message', function (app) {
         app.page.messages()
-            .selectSend(message);
+            .selectSend(message)
+            .verifyMessageSent(message);
     });
 });
