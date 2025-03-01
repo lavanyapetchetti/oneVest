@@ -1,10 +1,8 @@
 const messages = {
     signInWithoutLogin: function () {
-        this
+        return this
             .waitForElementPresent('@noLogin')
             .click('@noLogin');
-
-        return this;
     },
 
     selectionStartChat: function () {
