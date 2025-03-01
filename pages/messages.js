@@ -1,51 +1,62 @@
 const messages = {
+    // Clicks on the 'No Login' button if present
     signInWithoutLogin: function () {
         return this
             .waitForElementPresent('@noLogin')
             .click('@noLogin');
     },
 
+    // Starts a new chat by clicking on the 'Start Chat' button
     selectionStartChat: function () {
         return this.waitForElementPresent('@startChat')
             .click('@startChat');
     },
 
+    // Selects the 'Create Group' option
     selectCreateGroup: function () {
         return this.waitForElementPresent('@createGroup')
             .click('@createGroup');
     },
 
+    // Enters a phone number into the input field
     enterPhoneNumber: function (phoneNumber) {
         return this.waitForElementPresent('@inputNumber')
-            .setValue('@inputNumber', phoneNumber);
+            .setValue('@inputNumber', phoneNumber)
+            .selectTickMark();
     },
 
+    // Selects the tick mark button (usually to confirm a selection)
     selectTickMark: function () {
         return this.waitForElementPresent('@tickMark')
             .click('@tickMark');
     },
 
+    // Enters a group name into the input field
     enterGroupName: function (groupName) {
         return this.waitForElementPresent('@inputGroupName')
             .setValue('@inputGroupName', groupName);
     },
 
+    // Clicks on the 'Next' button to proceed
     selectNextButton: function () {
         return this.waitForElementPresent('@nextButton')
             .click('@nextButton');
     },
 
+    // Clicks on the 'Done' button to finalize an action
     selectDoneButton: function () {
         return this.waitForElementPresent('@doneButton')
             .click('@doneButton');
     },
 
+    // Enters a message into the message input field
     enterMessage: function (message) {
         return this.waitForElementVisible('@messageInput')
             .setValue('@messageInput', message)
     },
 
-    selectSendButton: function () {
+    // Clicks on the 'Send' button to send a message
+    selectSend: function () {
         return this.waitForElementVisible('@sendButton')
             .click('@sendButton');
     }
