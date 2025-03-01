@@ -1,10 +1,8 @@
 module.exports = {
   src_folders: ['tests'],
 
-  // See https://nightwatchjs.org/guide/concepts/page-object-model.html
   page_objects_path: ['pages'],
 
-  // See https://nightwatchjs.org/guide/concepts/test-globals.html
   globals_path: '',
 
   webdriver: {},
