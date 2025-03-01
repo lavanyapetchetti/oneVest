@@ -1,0 +1,17 @@
+{
+  "name": "mobile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no tests specified\\\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "appium": "^2.0.1",
+    "appium-uiautomator2-driver": "^4.1.0",
+    "nightwatch": "^3.11.1"
+  }
+}
