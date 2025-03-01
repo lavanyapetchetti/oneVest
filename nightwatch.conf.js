@@ -14,6 +14,7 @@ module.exports = {
   test_settings: {
     default: {
       disable_error_log: false,
+      reporter: 'nightwatch-html-reporter',
       // launch_url: 'http://localhost',
 
       screenshots: {
