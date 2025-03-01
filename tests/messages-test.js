@@ -1,5 +1,5 @@
 describe('Google Messages Android App Test', function () {
-
+    const message = 'Test ' + Math.floor(Math.random() * 100); // Generate message
     after(function (app){
         app.end(); // Close session
     });
@@ -21,13 +21,13 @@ describe('Google Messages Android App Test', function () {
 
     it('Enter phone number and select it', function (app) {
         app.page.messages()
-            .enterPhoneNumber('1234')
+            .enterPhoneNumber('12345678')
             .selectTickMark();
     });
 
     it('Enter another phone number and select it', function (app) {
         app.page.messages()
-            .enterPhoneNumber('12345')
+            .enterPhoneNumber('8976512')
             .selectTickMark()
             .selectNextButton();
     });
@@ -40,11 +40,11 @@ describe('Google Messages Android App Test', function () {
 
     it('Enter message text', function (app) {
         app.page.messages()
-            .enterMessage('Test');
+            .enterMessage(message);
     });
 
     it('Send message', function (app) {
         app.page.messages()
-            .selectSendButton();
+            .selectSend(message);
     });
 });
