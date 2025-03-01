@@ -1,7 +1,7 @@
-// This test is to verify send sms messages through android messages app
+// This test is to verify send sms through android messages app
 describe('Send SMS through android messages app', function () {
     // Generate a random message for testing
-    const message = 'Test ' + Math.floor(Math.random() * 100);
+    const message = 'Send Test ' + Math.floor(Math.random() * 100);
 
     // Close the session after all tests
     after(function (app){
