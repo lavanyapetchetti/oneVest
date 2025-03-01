@@ -34,7 +34,8 @@ const messages = {
     // Enters a group name into the input field
     enterGroupName: function (groupName) {
         return this.waitForElementPresent('@inputGroupName')
-            .setValue('@inputGroupName', groupName);
+            .setValue('@inputGroupName', groupName)
+            .assert.textContains('@inputGroupName', groupName);
     },
 
     // Clicks on the 'Next' button to proceed
@@ -51,15 +52,23 @@ const messages = {
 
     // Enters a message into the message input field
     enterMessage: function (message) {
-        return this.waitForElementVisible('@messageInput')
+        return this.waitForElementPresent('@messageInput')
             .setValue('@messageInput', message)
+            .assert.textContains('@messageInput', message);
     },
 
     // Clicks on the 'Send' button to send a message
     selectSend: function () {
-        return this.waitForElementVisible('@sendButton')
+        return this.waitForElementPresent('@sendButton')
             .click('@sendButton');
+    },
+
+    verifyMessageSent: function (message) {
+        return this.waitForElementPresent('@sendMessage')
+            .assert.textContains('@sendMessage', message);
     }
+
+
 };
 
 module.exports = {
@@ -68,12 +77,13 @@ module.exports = {
         noLogin: { selector: 'com.google.android.apps.messaging:id/secondary_action_button', locateStrategy: 'id' },
         startChat: { selector: 'Start chat', locateStrategy: 'accessibility id' },
         createGroup: { selector: '//android.widget.TextView[@text="Create group"]', locateStrategy: 'xpath' },
-        inputNumber: { selector: '//android.widget.EditText', locateStrategy: "xpath" },
-        tickMark: { selector: '//android.view.View[@content-desc="Unselected"]//android.widget.Button', locateStrategy: "xpath" },
-        inputGroupName: { selector: "//android.widget.EditText", locateStrategy: "xpath" },
-        nextButton: { selector: '//android.widget.TextView[@text=\"Next\"]', locateStrategy: "xpath" },
-        doneButton: { selector: '//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button', locateStrategy: "xpath" },
-        messageInput: { selector: 'com.google.android.apps.messaging:id/compose_message_text', locateStrategy: "id" },
-        sendButton: { selector: 'Send Message', locateStrategy: 'accessibility id'}
+        inputNumber: { selector: '//android.widget.EditText', locateStrategy: 'xpath' },
+        tickMark: { selector: '//android.view.View[@content-desc="Unselected"]//android.widget.Button', locateStrategy: 'xpath' },
+        inputGroupName: { selector: '//android.widget.EditText', locateStrategy: 'xpath' },
+        nextButton: { selector: '//android.widget.TextView[@text=\"Next\"]', locateStrategy: 'xpath' },
+        doneButton: { selector: '//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button', locateStrategy: 'xpath' },
+        messageInput: { selector: 'com.google.android.apps.messaging:id/compose_message_text', locateStrategy: 'id' },
+        sendButton: { selector: 'Send Message', locateStrategy: 'accessibility id'},
+        sendMessage: { selector: 'com.google.android.apps.messaging:id/message_text', locateStrategy: 'id' }
     }
 };
