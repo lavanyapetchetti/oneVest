@@ -63,6 +63,7 @@ const messages = {
             .click('@sendButton');
     },
 
+    //Verify sent message
     verifyMessageSent: function (message) {
         return this.waitForElementPresent('@sendMessage')
             .assert.textContains('@sendMessage', message);
