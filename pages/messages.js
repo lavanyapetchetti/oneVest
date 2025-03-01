@@ -68,8 +68,6 @@ const messages = {
         return this.waitForElementPresent('@sendMessage')
             .assert.textContains('@sendMessage', message);
     }
-
-
 };
 
 module.exports = {
