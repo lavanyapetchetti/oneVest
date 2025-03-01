@@ -68,12 +68,12 @@ module.exports = {
         noLogin: { selector: 'com.google.android.apps.messaging:id/secondary_action_button', locateStrategy: 'id' },
         startChat: { selector: 'Start chat', locateStrategy: 'accessibility id' },
         createGroup: { selector: '//android.widget.TextView[@text="Create group"]', locateStrategy: 'xpath' },
-        inputNumber: { selector: "//android.widget.EditText", locateStrategy: "xpath" },
-        tickMark: { selector: "//android.view.View[@content-desc='Unselected']//android.widget.Button", locateStrategy: "xpath" },
+        inputNumber: { selector: '//android.widget.EditText', locateStrategy: "xpath" },
+        tickMark: { selector: '//android.view.View[@content-desc="Unselected"]//android.widget.Button', locateStrategy: "xpath" },
         inputGroupName: { selector: "//android.widget.EditText", locateStrategy: "xpath" },
-        nextButton: { selector: "//android.widget.TextView[@text=\"Next\"]", locateStrategy: "xpath" },
-        doneButton: { selector: "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button", locateStrategy: "xpath" },
-        messageInput: { selector: "com.google.android.apps.messaging:id/compose_message_text", locateStrategy: "id" },
+        nextButton: { selector: '//android.widget.TextView[@text=\"Next\"]', locateStrategy: "xpath" },
+        doneButton: { selector: '//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button', locateStrategy: "xpath" },
+        messageInput: { selector: 'com.google.android.apps.messaging:id/compose_message_text', locateStrategy: "id" },
         sendButton: { selector: 'Send Message', locateStrategy: 'accessibility id'}
     }
 };
