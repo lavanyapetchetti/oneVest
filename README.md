@@ -17,8 +17,8 @@ This project automates the Google Messages app using **Appium** with **Nightwatc
 ### **2️⃣ Install Dependencies**
 Clone the repository and install required Node modules:
 ```bash
-git clone https://github.com/your-repo/android-appium-nightwatch.git
-cd android-appium-nightwatch
+git clone https://github.com/lavanyapetchetti/oneVest
+cd oneVest
 npm install
 ```
 
