@@ -23,7 +23,8 @@ describe('Send SMS through android messages app', function () {
     // Test case to select the 'Create Group' button
     it('Select create group button', function (app) {
         app.page.messages()
-            .selectCreateGroup();
+            .selectCreateGroup()
+            .verifyMessageSent(message);
     });
 
     // Test case to enter a phone number and confirm selection
