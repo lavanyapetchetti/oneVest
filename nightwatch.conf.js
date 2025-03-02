@@ -88,7 +88,7 @@ module.exports = {
         platformName: 'android',
         'appium:options': {
           automationName: 'UiAutomator2',
-          avd: 'nightwatch-android-11',
+          avd: 'Medium_Phone_API_35',
           appPackage: 'com.google.android.apps.messaging',
           appActivity: 'com.google.android.apps.messaging.ui.ConversationListActivity',
           appWaitActivity: 'com.google.android.apps.messaging.ui.ConversationListActivity',
