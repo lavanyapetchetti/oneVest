@@ -24,8 +24,8 @@ pipeline {
             steps {
                 sh '''
                 nohup $ANDROID_HOME/emulator/emulator -avd $AVD_NAME -no-audio -no-window -no-boot-anim &
-                sleep 60  # Wait for emulator to fully start
-                adb devices  # Verify emulator is running
+                sleep 60 
+                adb devices
                 '''
             }
         }
@@ -42,14 +42,15 @@ pipeline {
                 sh 'npx nightwatch --env app.android.emulator'
             }
         }
+    }
 
     post {
         always {
             archiveArtifacts artifacts: 'reports/**/*.xml', fingerprint: true
             junit 'reports/**/*.xml'
-            
-            sh 'adb emu kill || true'  // Stop emulator if running
-            sh 'pkill -f appium || true'  // Stop Appium
+
+            sh 'adb emu kill || true'  
+            sh 'pkill -f appium || true'  
         }
     }
 }
