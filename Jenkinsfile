@@ -43,18 +43,11 @@ pipeline {
             }
         }
 
-        stage('Archive Test Results') {
-            post {
-                always {
-                    archiveArtifacts artifacts: 'reports/**/*.xml', fingerprint: true
-                    junit 'reports/**/*.xml'
-                }
-            }
-        }
-    }
-
     post {
         always {
+            archiveArtifacts artifacts: 'reports/**/*.xml', fingerprint: true
+            junit 'reports/**/*.xml'
+            
             sh 'adb emu kill || true'  // Stop emulator if running
             sh 'pkill -f appium || true'  // Stop Appium
         }
