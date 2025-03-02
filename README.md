@@ -55,7 +55,7 @@ npx nightwatch
 
 ### **Run Specific Test**
 ```bash
-npx nightwatch tests/send_messages.js
+npx nightwatch tests/send_messages.js --env app.android.emulator
 ```
 
 ### **Debug Mode (Verbose Logging)**
