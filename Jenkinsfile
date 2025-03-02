@@ -10,7 +10,15 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/lavanyapetchetti/oneVest.git'
+                script {
+                    try {
+                        echo 'Cloning the repository from GitHub...'
+                        // You can specify a branch name if required
+                        git branch: 'main', url: 'https://github.com/lavanyapetchetti/oneVest.git'
+                    } catch (Exception e) {
+                        error "Git Clone failed: ${e.message}"
+                    }
+                }
             }
         }
 
