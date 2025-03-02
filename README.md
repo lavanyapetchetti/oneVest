@@ -26,6 +26,9 @@ npm install
 - **For Emulator:** Open **Android Studio**, go to **AVD Manager**, create a virtual device, and start it.
 - **For Real Device:** Enable **USB Debugging** in Developer Options and connect your device via USB.
 
+Setting Up the Android Emulator (AVD)
+To run tests on an Android emulator, you need to set up an Android Virtual Device (AVD) that matches the configuration in the test script (e.g., Medium_Phone_API_35). If you don't have this AVD, you can create one.
+
 Verify device is connected:
 ```bash
 adb devices
