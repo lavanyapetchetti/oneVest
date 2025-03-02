@@ -33,7 +33,7 @@ pipeline {
         stage('Start Appium Server') {
             steps {
                 sh 'appium --address 127.0.0.1 --port 4723 --log-level error > appium.log 2>&1 &'
-                sleep 10  # Wait for Appium to start
+                sleep 10
             }
         }
 
