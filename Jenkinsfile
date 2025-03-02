@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        AVD_NAME = 'Medium_Phone_API_35'
+        AVD_NAME = 'nightwatch-android-11'
         ANDROID_HOME = '/Users/lavanyapetchetti/Library/Android/sdk'
     }
     tools {
