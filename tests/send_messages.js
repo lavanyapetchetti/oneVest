@@ -5,7 +5,7 @@ describe('Send SMS through android messages app', function () {
 
     // Close the session after all tests
     after(function (app){
-        app.end(); // Close session
+        app.end();
     });
 
     // Test case to launch the app without logging in
